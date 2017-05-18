@@ -3,16 +3,19 @@ const initialState = {
 }
 
 const counter = (state = initialState, action) => {
+  /*
+  With Redux, you never mutate any part of state.
+  http://stackoverflow.com/questions/39513753/my-redux-state-has-changed-why-doesnt-react-trigger-a-re-render
+  Should return a brand new state instead of mutating the state
+  */
   console.log('on reducer', action);
   switch (action.type) {
     case 'INCREMENT':
-      state.counter ++
-      console.log('on increment', state);
-      return state
+      console.log('on increment', state.counter+1);
+      return { counter: state.counter+1 };
     case 'DECREMENT':
-      state.counter --
-      console.log('on decrement', state);
-      return state
+      console.log('on decrement', state.counter-1);
+      return { counter: state.counter-1 };
     default:
       return state
   }
