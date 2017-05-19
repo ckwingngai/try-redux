@@ -8,7 +8,7 @@ const counter = (state = initialState, action) => {
   http://stackoverflow.com/questions/39513753/my-redux-state-has-changed-why-doesnt-react-trigger-a-re-render
   Should return a brand new state instead of mutating the state
   */
-  console.log('on reducer', action);
+  // console.log('on reducer', action);
   switch (action.type) {
     case 'INCREMENT':
       console.log('on increment', state.counter+1);
