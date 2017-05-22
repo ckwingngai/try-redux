@@ -11,7 +11,7 @@ const todolist = (state = todoInitialState, action) => {
   console.log('on reducer', action);
   switch (action.type) {
     case 'ADD_TODO':
-      console.log('on add');
+      console.log('on add reducer');
       const getId = (obj) => { return obj.id }
       const idList = R.map(getId)(state.todolist)
       const maxId = R.reduce(R.max, 0, idList)
@@ -24,6 +24,14 @@ const todolist = (state = todoInitialState, action) => {
           ...state.todolist
         ]
       };
+    case 'DELETE_TODO':
+      console.log('on delete reducer', action.payload.id)
+      console.log(state.todolist)
+      // return state;
+      return {
+        todolist: state.todolist.filter(x => x.id !== action.payload.id)
+      };
+      // return R.filter(x => x.id !== action.payload.id)(state.todolist);
     default:
       return state;
   }

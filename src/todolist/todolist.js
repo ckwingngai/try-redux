@@ -11,28 +11,28 @@ class Todolist extends Component {
     this.state = {todoText: ''};
     this.handleChange = this.handleChange.bind(this);
     this.onAdd = this.onAdd.bind(this);
+    this.onDelete = this.onDelete.bind(this);
   }
   getItem(todolist) {
-    console.log('getItem')
     return R.map((todoitem) => {
       return (
-        <li key={todoitem.id}>{ todoitem.text }</li>
+        <li key={todoitem.id}>{ todoitem.text }<button onClick={() => this.onDelete(todoitem.id)}>X</button></li>
       );
     })(todolist)
   }
   onAdd(e) {
-    console.log('onAdd', {text: this.state.todoText})
     this.props.actions.addTodo({text: this.state.todoText})
     this.setState({ todoText: '' })
+  }
+  onDelete(id) {
+    this.props.actions.deleteTodo({ id });
   }
   handleChange(event) {
     console.log('handleChange')
     this.setState({ todoText: event.target.value });
   }
   render() {
-    console.log('render Todolist', this.props);
     const { payload, actions } = this.props;
-    console.log(payload.todolist[0])
     return (
       <div>
         <h2>Todolist</h2>
