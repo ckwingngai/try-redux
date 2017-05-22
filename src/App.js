@@ -7,7 +7,6 @@ import Todolist from './todolist/todolist'
 
 export default class App extends Component {
   render() {
-    console.log('App', this.props)
     const { value, actions } = this.props;
     return (
       <div className="App">

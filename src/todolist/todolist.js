@@ -14,9 +14,15 @@ class Todolist extends Component {
     this.onDelete = this.onDelete.bind(this);
   }
   getItem(todolist) {
+    const getitemStyle = (todoitem) => {
+      if (todoitem.done === true) {
+        return {textDecoration: 'line-through'}
+      }
+      return {}
+    }
     return R.map((todoitem) => {
       return (
-        <li key={todoitem.id}>{ todoitem.text }<button onClick={() => this.onDelete(todoitem.id)}>X</button></li>
+        <li style={getitemStyle(todoitem)} key={todoitem.id}><input type="checkbox" onChange={() => this.onDone(todoitem.id)}/>{ todoitem.text }<button onClick={() => this.onDelete(todoitem.id)}>X</button></li>
       );
     })(todolist)
   }
@@ -27,12 +33,15 @@ class Todolist extends Component {
   onDelete(id) {
     this.props.actions.deleteTodo({ id });
   }
+  onDone(id) {
+    this.props.actions.doneTodo({ id });
+  }
   handleChange(event) {
-    console.log('handleChange')
     this.setState({ todoText: event.target.value });
   }
   render() {
-    const { payload, actions } = this.props;
+    const { payload } = this.props;
+    // console.log(JSON.stringify(payload.todolist));
     return (
       <div>
         <h2>Todolist</h2>
