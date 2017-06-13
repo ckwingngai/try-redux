@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Counter from './counter'
-import Todolist from './todolist'
+import Counter from './Counter'
+import Todolist from './TodoList'
 
 export default class App extends Component {
   render() {

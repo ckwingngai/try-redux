@@ -4,8 +4,8 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 import App from './App';
-import Counter from './counter';
-import Todolist from './todolist';
+import Counter from './Counter';
+import TodoList from './TodoList';
 import rootReducer from './rootReducer'
 import './index.css';
 
@@ -17,7 +17,7 @@ ReactDOM.render(
       <div>
         <Route exact path="/" component={App} />
         <Route path="/counter" component={Counter} />
-        <Route path="/todolist" component={Todolist} />
+        <Route path="/todolist" component={TodoList} />
       </div>
     </BrowserRouter>
   </Provider>,
