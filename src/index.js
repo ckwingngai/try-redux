@@ -4,11 +4,10 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 import App from './App';
-import Counter from './counter/counter';
-import Todolist from './todolist/todolist';
+import Counter from './counter';
+import Todolist from './todolist';
 import rootReducer from './rootReducer'
 import './index.css';
-
 
 const store = createStore(rootReducer);
 
