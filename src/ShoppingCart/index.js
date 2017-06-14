@@ -29,7 +29,7 @@ class ShoppingCart extends Component {
   }
   onAdd(product) {
     console.log('onAdd', this.props);
-    this.props.actions.addCart({text: product.title});
+    this.props.actions.addCart({product: product});
   }
   render() {
     console.log(this.props);
