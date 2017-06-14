@@ -40,8 +40,8 @@ class Todolist extends Component {
     this.setState({ todoText: event.target.value });
   }
   render() {
+    console.log(this.props);
     const { payload } = this.props;
-    // console.log(JSON.stringify(payload.todolist));
     return (
       <div>
         <h2>Todolist</h2>

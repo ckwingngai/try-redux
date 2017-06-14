@@ -5,11 +5,14 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 import App from './App';
 import Counter from './Counter';
+import ShoppingCart from './ShoppingCart';
 import TodoList from './TodoList';
-import rootReducer from './rootReducer'
+import rootReducer from './rootReducer';
 import './index.css';
 
 const store = createStore(rootReducer);
+
+// console.log = function() {}
 
 ReactDOM.render(
   <Provider store={store}>
@@ -18,6 +21,7 @@ ReactDOM.render(
         <Route exact path="/" component={App} />
         <Route path="/counter" component={Counter} />
         <Route path="/todolist" component={TodoList} />
+        <Route path="/shopping-cart" component={ShoppingCart} />
       </div>
     </BrowserRouter>
   </Provider>,

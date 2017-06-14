@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Counter from './Counter'
-import Todolist from './TodoList'
+import Counter from './Counter';
+import Todolist from './TodoList';
+import ShoppingCart from './ShoppingCart';
 
 export default class App extends Component {
   render() {
@@ -17,6 +18,7 @@ export default class App extends Component {
         <div className="App-intro">
           <Counter actions={actions} value={value}/>
           <Todolist />
+          <ShoppingCart />
         </div>
       </div>
     );

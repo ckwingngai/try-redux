@@ -11,6 +11,7 @@ class Counter extends Component {
     // console.log('componentWillReceiveProps()', this.props);
   }
   render() {
+    console.log(this.props);
     const { payload, actions } = this.props;
     return (
       <div>
