@@ -3,7 +3,6 @@ import R from 'ramda';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './actions';
-import products from '../api/products.json';
 import CartList from './components/CartList.js';
 
 class ShoppingCart extends Component {
@@ -19,27 +18,27 @@ class ShoppingCart extends Component {
   componentWillReceiveProps() {
     // console.log('componentWillReceiveProps()', this.props);
   }
-  getProduct(products) {
+  getProduct() {
     return R.map((product) => {
       return (
         <li key={product.id}>{product.title} - {product.price} ({product.inventory})
           <button onClick={() => this.onAdd(product)}>Add to Cart</button>
         </li>
       )
-    })(products)
+    })(this.props.payload.products)
   }
   onAdd(product) {
     console.log('onAdd', this.props);
     this.props.actions.addCart({text: product.title});
   }
   render() {
-    console.log(this.props.actions);
+    console.log(this.props);
     const { payload, actions } = this.props;
     return (
       <div>
         <h2>Shopping Carts</h2>
         <ul>
-          {this.getProduct(products)}
+          {this.getProduct()}
         </ul>
         <CartList {...payload} {...actions} />
       </div>
