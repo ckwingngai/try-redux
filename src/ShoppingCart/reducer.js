@@ -55,8 +55,7 @@ const cartlist = (state = cartInitialState, action) => {
         return x
       })(state.cartlist)
       rmCartlist = R.filter(x => x.quantity!==0)(rmCartlist)
-      console.log('state.cartlist', state.cartlist)
-      console.log('rmCartlist', rmCartlist)
+      
       return {
         products: R.map(x => {
           if (x.id===action.payload.item.productId) {
