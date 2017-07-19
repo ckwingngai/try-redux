@@ -33,10 +33,9 @@ class MonthIndicators extends Component {
     })
   }
   loadIndicators(form) {
-    let index = 0
     return _.map(form.indicators, (indicator) => {
       return (
-        <input type="checkbox" key={index++} checked={indicator.checked} onChange={this.changeIndicator.bind(this, form.formId, indicator)} />
+        <input type="checkbox" key={indicator.id} checked={indicator.checked} onChange={this.changeIndicator.bind(this, form.formId, indicator)} />
       );
     });
   }
