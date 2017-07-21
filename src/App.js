@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import MyModal from './MyModal';
 import MonthIndicators from './MonthIndicators';
 import Counter from './Counter';
 import Todolist from './TodoList';
@@ -17,6 +18,7 @@ export default class App extends Component {
           <h2>Try Redux</h2>
         </div>
         <div className="App-intro">
+          <MyModal />
           <MonthIndicators data="1:111111000000,2:111111111111" />
           <Counter actions={actions} value={value}/>
           <Todolist />
