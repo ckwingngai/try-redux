@@ -7,6 +7,7 @@ import App from './App';
 import Counter from './Counter';
 import ShoppingCart from './ShoppingCart';
 import TodoList from './TodoList';
+import CombinedList from './CombinedList';
 import rootReducer from './rootReducer';
 import './index.css';
 
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route path="/counter" component={Counter} />
         <Route path="/todolist" component={TodoList} />
         <Route path="/shopping-cart" component={ShoppingCart} />
+        <Route path="/combined-list" component={CombinedList} />
       </div>
     </BrowserRouter>
   </Provider>,

@@ -1,0 +1,5 @@
+[
+  {"id": 1, "title": "UPC", "startPeriod": "2017-07-07", "endPeriod": "2017-07-20"},
+  {"id": 2, "title": "ABC", "startPeriod": "2017-07-01", "endPeriod": "2017-07-30"},
+  {"id": 3, "title": "DEF", "startPeriod": "2017-07-09", "endPeriod": "2017-07-12"}
+]

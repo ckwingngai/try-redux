@@ -23,10 +23,6 @@ class MyModal extends Component {
       modalIsOpen: false,
       smShow: false
     };
-
-    this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
   componentWillMount() {
     // console.log('componentWillMount()', this.props);
@@ -50,18 +46,18 @@ class MyModal extends Component {
     let smClose = () => this.setState({ smShow: false });
     return (
       <div>
-        <button onClick={this.openModal}>Open Modal</button>
+        <button onClick={this.openModal.bind(this)}>Open Modal</button>
         <Button bsStyle="primary">Bootstrap Button</Button>
         <Modal
           isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
+          onAfterOpen={this.afterOpenModal.bind(this)}
+          onRequestClose={this.closeModal.bind(this)}
           style={customStyles}
           contentLabel="Example Modal"
         >
 
           <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
+          <button onClick={this.closeModal.bind(this)}>close</button>
           <div>I am a modal</div>
           <form>
             <input />

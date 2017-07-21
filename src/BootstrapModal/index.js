@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Button,  Modal } from 'react-bootstrap';
 
-const BootstrapModal = React.createClass({
+
+class BootstrapModal extends Component {
   render() {
     return (
       <Modal {...this.props} bsSize="small" aria-labelledby="contained-modal-title-sm">
@@ -18,6 +19,6 @@ const BootstrapModal = React.createClass({
       </Modal>
     );
   }
-});
+}
 
 export default BootstrapModal;
